@@ -190,15 +190,17 @@ public final class MathLand {
                 System.out.println("Please enter a valid integer "
                     + error.getMessage());
             }
-            System.out.println("Would you like to play again?(y/n): ");
-            //Get next line as a string
-            quesAns = scanner.nextLine();
+            do {
+                System.out.println("Would you like to play again?(y/n): ");
+                //Get next line as a string
+                quesAns = scanner.nextLine();
+                if (quesAns.equals("n")) {
+                    System.out.println("Thank you for playing!!");
+                } else {
+                    System.out.println("Please input a valid string");
+                }
+            } while (!quesAns.equals("y") && !quesAns.equals("n"));
         } while (quesAns.equals("y"));
-        if (quesAns.equals("n")) {
-            System.out.println("Thank you for playing!!");
-        } else {
-            System.out.println("Please input a valid string");
-        }
 
             // Closing Scanner
             scanner.close();
